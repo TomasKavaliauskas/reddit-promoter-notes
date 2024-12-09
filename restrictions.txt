@@ -1,0 +1,3 @@
+1) Same redgif link cannot be posted again until the full cycle finishes on the same subreddit.
+2) Same title cannot be used with the same redgif ever again on the same subreddit.
+3) Same title cannot be used even with other redgif on the same subreddit for N days.
