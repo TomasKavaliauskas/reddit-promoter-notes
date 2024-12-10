@@ -121,10 +121,23 @@ async function openPostSubmitPage(subreddit) {
 
     return new Promise(async (resolve, reject) => {
 
-        await Promise.all([
-            page.goto(`https://www.reddit.com/r/${subreddit}/submit/?type=LINK`, NAVIGATION_OPTIONS),
-            page.waitForNavigation(NAVIGATION_OPTIONS)
-        ]);
+        let pageLoaded = false;
+
+        while (!pageLoaded) {
+
+            try {
+
+                await Promise.all([
+                    page.goto(`https://www.reddit.com/r/${subreddit}/submit/?type=LINK`, NAVIGATION_OPTIONS),
+                    page.waitForNavigation(NAVIGATION_OPTIONS)
+                ]);
+                pageLoaded = true;
+
+            } catch (err) {
+
+            }
+
+        }
 
         resolve();
         return;
